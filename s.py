@@ -61,14 +61,14 @@ st.set_page_config(layout="wide")
 st.title(":red[SINGAPORE RESALE FLAT PRICES PREDICTING]")
 
 with st.sidebar:
-    select = option_menu("DATA EXPLORATION", options=["HOME", "FLAT PRICES PREDICTION", "Step-by-Step Process"])
+    select = option_menu("DATA EXPLORATION", options=["Home", "Flat Prices Prediction", "Step-by-Step Process"])
 
-if select == "HOME":
+if select == "Home":
     st.write("")
     st.header(":green[Introduction]")
     st.write("""In Singapore's competitive real estate market, accurately estimating the resale price of flats is crucial for both buyers and sellers. Factors such as location, flat type, floor area, and lease duration significantly impact resale values. This project aims to develop a machine learning model to predict the resale prices of flats based on historical transaction data. By creating a user-friendly web application, this model will assist users in making informed decisions about buying or selling flats.""")
 
-    st.header(":red[Skills Gained]")
+    st.header(":green[Skills Gained]")
     st.write("1. Data Wrangling")
     st.write("2. Exploratory Data Analysis (EDA)")
     st.write("3. Model Building")
@@ -77,10 +77,13 @@ if select == "HOME":
     st.header(":green[Domain:]")
     st.write("Real Estate")
 
+    st.header(":green[Data Source :]")
+    st.write("https://beta.data.gov.sg/collections/189/view")
+
     st.header(":green[Results]")
     st.write("The project provides a valuable tool for buyers and sellers in Singapore’s housing market, offering estimates to aid in making informed decisions. It also showcases the application of machine learning in real estate and web development.")
 
-if select == "FLAT PRICES PREDICTION":
+if select == "Flat Prices Prediction":
     st.header(":green[RESALE FLAT PRICES PREDICTION]")
 
     col1, col2 = st.columns(2)
@@ -109,11 +112,12 @@ if select == "FLAT PRICES PREDICTION":
 
 
 if select == "Step-by-Step Process":
-    st.markdown("<h1 style='color: #1f77b4;'>Data Collection and Preprocessing:</h1>", unsafe_allow_html=True)
-    st.write("""Data Collection: Obtain the dataset of resale flat transactions from the Singapore Housing and Development Board (HDB). The dataset should cover transactions from 1990 to the present.
-Data Cleaning: Handle missing values, outliers, and inconsistencies. Convert data types as necessary and ensure the dataset is structured for analysis.
-Feature Engineering""")
-
+    st.markdown("<h1 style='color: #1f77b4;'>Data Collection:</h1>", unsafe_allow_html=True)
+    st.write("""Data Collection: Obtain the dataset of resale flat transactions from the Singapore Housing and Development Board (HDB). The dataset should cover transactions from 1990 to the present.""")
+    
+    st.markdown("<h1 style='color: #1f77b4;'>Data Cleaning:</h1>", unsafe_allow_html=True)
+    st.write("""Data Cleaning: Handle missing values, outliers, and inconsistencies. Convert data types as necessary and ensure the dataset is structured for analysis.""")
+    
     st.markdown("<h2 style='color: #ff7f0e;'>Feature Extraction:</h2>", unsafe_allow_html=True)
     st.write("Identify and extract relevant features such as town, flat type, storey range, floor area, flat model, and lease commence date.")
 
