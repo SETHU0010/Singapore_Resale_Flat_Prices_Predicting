@@ -44,11 +44,8 @@ def resale_flat_prices_predict(year, town, flat_type, floor_area_sqm, flat_model
                                 storey_start, storey_end, remaining_lease_year,
                                 remaining_lease_month, lease_commence_date):
     # Load the regression model
-def load_model():
-    url = "https://example.com/path-to-your-model.pkl"  # Use a direct link to the model file
-    response = requests.get(url)
-    model = pickle.load(BytesIO(response.content))
-    return model
+    with open("Resale Flat Prices Model Final.pkl", "rb") as f:
+        model_regression = pickle.load(f)
 
     user_regression_data = np.array([[year, option.town_dict[town], option.flat_type_dict[flat_type], 
                                       floor_area_sqm, option.flat_model_dict[flat_model],
