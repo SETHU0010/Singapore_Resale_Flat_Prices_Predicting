@@ -44,8 +44,11 @@ def resale_flat_prices_predict(year, town, flat_type, floor_area_sqm, flat_model
                                 storey_start, storey_end, remaining_lease_year,
                                 remaining_lease_month, lease_commence_date):
     # Load the regression model
-    with open("Resale Flat Prices Model Final.pkl", "rb") as f:
-        model_regression = pickle.load(f)
+def load_model():
+    url = "https://example.com/path-to-your-model.pkl"  # Use a direct link to the model file
+    response = requests.get(url)
+    model = pickle.load(BytesIO(response.content))
+    return model
 
     user_regression_data = np.array([[year, option.town_dict[town], option.flat_type_dict[flat_type], 
                                       floor_area_sqm, option.flat_model_dict[flat_model],
@@ -149,7 +152,4 @@ if select == "Step-by-Step Process":
     st.write("Ensure the web application operates smoothly and deploy it to a hosting platform.")
 
     st.markdown("<h2 style='color: #ff7f0e;'>Documentation and Reporting:</h2>", unsafe_allow_html=True)
-    st.write("Document the project, including methodology, results, and instructions for using the web application.")
-
-    st.markdown("<h2 style='color: #2ca02c;'>Maintenance and Updates:</h2>", unsafe_allow_html=True)
-    st.write("Regularly update the model and application based on new data and user feedback.")
+    st.write("Document the project, includin
