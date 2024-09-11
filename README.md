@@ -64,9 +64,3 @@ The dataset used in this project is obtained from the Singapore Government Data 
 ## Results
 
 The application will benefit buyers and sellers in the Singapore housing market by providing estimates of resale prices. It showcases the practical application of machine learning in real estate and web development.
-
-## Installation
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/Singapore-Resale-Flat-Prices-Prediction.git
